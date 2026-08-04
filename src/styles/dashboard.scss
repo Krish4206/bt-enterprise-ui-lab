@@ -317,3 +317,69 @@
 .btn-primary:hover {
   background: var(--primary-hover);
 }
+
+/* ============ Responsive Breakpoints ============ */
+
+/* Tablet: 2-column stat cards */
+@media (max-width: 1024px) {
+  .stat-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet portrait: stack page header */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .stat-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-card__value {
+    font-size: 24px;
+  }
+
+  .table-card__header {
+    padding: 16px;
+  }
+
+  .table-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+}
+
+/* Small mobile: single-column stat cards */
+@media (max-width: 576px) {
+  .stat-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header__title {
+    font-size: 20px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .table-card__title {
+    font-size: 15px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+}

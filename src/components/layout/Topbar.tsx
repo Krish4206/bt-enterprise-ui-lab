@@ -1,10 +1,22 @@
-function Topbar() {
+interface TopbarProps {
+  onMenuClick?: () => void;
+}
+
+function Topbar({ onMenuClick }: TopbarProps) {
   return (
     <header className="topbar">
+      <button className="topbar__menu-btn" onClick={onMenuClick} aria-label="Toggle menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 12h18" />
+          <path d="M3 6h18" />
+          <path d="M3 18h18" />
+        </svg>
+      </button>
+
       <div className="topbar__breadcrumb">
         <span>Home</span>
         <span className="crumb-sep">/</span>
-        <span>Customers</span>
+        <span className="crumb-mid">Customers</span>
         <span className="crumb-sep">/</span>
         <span className="crumb-current">Dashboard</span>
       </div>

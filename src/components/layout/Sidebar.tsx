@@ -7,6 +7,10 @@ interface NavItem {
   badge?: string;
 }
 
+interface SidebarProps {
+  isOpen?: boolean;
+}
+
 const ICON_SIZE = 18;
 
 const navItems: NavItem[] = [
@@ -118,9 +122,9 @@ const bottomItems: NavItem[] = [
   },
 ];
 
-function Sidebar() {
+function Sidebar({ isOpen = false }: SidebarProps) {
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? 'sidebar--open' : ''}`}>
       <div className="sidebar__logo">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="3" y="3" width="7" height="9" rx="1" />
