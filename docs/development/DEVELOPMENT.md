@@ -131,6 +131,7 @@ At minimum:
 ```text
 npm run lint
 npm run build
+```
 
 ---
 
